@@ -1,6 +1,8 @@
+
 import React, { useEffect } from 'react';
 import { BrowserRouter as Router, Routes, Route, useLocation } from 'react-router-dom';
 import { Toaster } from '@/components/ui/toaster';
+import BackToTopButton from '@/components/BackToTopButton';
 import HomePage from '@/pages/HomePage';
 import LixoEletronicoPage from '@/pages/LixoEletronicoPage';
 import GestaoEnergiaPage from '@/pages/GestaoEnergiaPage';
@@ -28,6 +30,7 @@ function App() {
     <Router>
       <ScrollToTop />
       <Toaster />
+      <BackToTopButton />
       <Routes>
         <Route path="/" element={<HomePage />} />
         <Route path="/lixo-eletronico" element={<LixoEletronicoPage />} />

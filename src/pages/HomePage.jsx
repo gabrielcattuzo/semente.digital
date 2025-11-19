@@ -1,13 +1,23 @@
+
 import React from 'react';
 import { Helmet } from 'react-helmet';
 import { motion } from 'framer-motion';
-import { useNavigate } from 'react-router-dom';
+import { useNavigate, useLocation } from 'react-router-dom';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
 import { Leaf, Zap, Recycle, Cloud, Battery, TreePine, Droplets } from 'lucide-react';
 
 const HomePage = () => {
   const navigate = useNavigate();
+  const location = useLocation();
+
+  const handlePillarClick = (path) => {
+    if (location.pathname === path) {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    } else {
+      navigate(path);
+    }
+  };
 
   const pillarsRow1 = [
     { id: 1, title: 'Gestão de Energia', icon: Zap, path: '/gestao-energia', color: 'from-yellow-400 to-orange-500' },
@@ -74,7 +84,7 @@ const HomePage = () => {
                           transition={{ delay: index * 0.1, duration: 0.5 }}
                           whileHover={{ scale: 1.05, y: -5 }}
                           whileTap={{ scale: 0.95 }}
-                          onClick={() => navigate(pillar.path)}
+                          onClick={() => handlePillarClick(pillar.path)}
                           className="group"
                         >
                           <div className={`relative bg-gradient-to-br ${pillar.color} rounded-2xl shadow-lg p-6 h-40 flex flex-col items-center justify-center gap-3 transition-all duration-300 hover:shadow-2xl`}>
@@ -99,7 +109,7 @@ const HomePage = () => {
                           transition={{ delay: 0.4 + index * 0.1, duration: 0.5 }}
                           whileHover={{ scale: 1.05, y: -5 }}
                           whileTap={{ scale: 0.95 }}
-                          onClick={() => navigate(pillar.path)}
+                          onClick={() => handlePillarClick(pillar.path)}
                           className="group"
                         >
                           <div className={`relative bg-gradient-to-br ${pillar.color} rounded-2xl shadow-lg p-6 h-40 flex flex-col items-center justify-center gap-3 transition-all duration-300 hover:shadow-2xl`}>
@@ -129,7 +139,7 @@ const HomePage = () => {
                         initial={{ opacity: 0, y: 20 }} 
                         animate={{ opacity: 1, y: 0 }} 
                         transition={{ delay: index * 0.1 }} 
-                        onClick={() => navigate(pillar.path)} 
+                        onClick={() => handlePillarClick(pillar.path)}
                         className="w-full"
                       >
                         <div className={`bg-gradient-to-br ${pillar.color} rounded-2xl shadow-lg p-4 h-32 flex flex-col items-center justify-center gap-2`}>
