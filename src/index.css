@@ -1,0 +1,23 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+
+body {
+  @apply bg-gradient-to-br from-emerald-50 via-green-50 to-teal-50 text-gray-800;
+  font-family: 'Poppins', sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+:root {
+  --primary-green: #2d6a4f;
+  --secondary-green: #52b788;
+  --accent-brown: #8b6f47;
+  --light-green: #d8f3dc;
+}
