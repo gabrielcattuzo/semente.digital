@@ -1,3 +1,4 @@
+
 import React, { useState } from 'react';
 import { Helmet } from 'react-helmet';
 import { motion } from 'framer-motion';
@@ -27,12 +28,14 @@ const ReducaoAguaPage = () => {
     {
       src: "https://horizons-cdn.hostinger.com/c749d44c-18a1-4a1c-ab10-89cb7bbafa25/5bf59962b23b20651c597540d37c18f7.jpg",
       alt: "Infográfico sobre água potável e saneamento no mundo e no Brasil",
-      caption: "Infográfico: Água Potável e Saneamento"
+      caption: "Infográfico: Água Potável e Saneamento",
+      link: "https://prismaengenhariajr.com.br/membranas-filtrantes-para-tratamento-de-agua-e-efluentes/"
     },
     {
       src: "https://horizons-cdn.hostinger.com/c749d44c-18a1-4a1c-ab10-89cb7bbafa25/feeded71206e21455d1c366821736370.jpg",
       alt: "Infográfico sobre o uso da água no Brasil por setor",
-      caption: "Infográfico: Uso da Água no Brasil"
+      caption: "Infográfico: Uso da Água no Brasil",
+      link: "https://www.ecodebate.com.br/2023/06/05/vantagens-e-potencial-da-energia-solar-fotovoltaica-no-brasil/"
     }
   ];
 
@@ -73,9 +76,9 @@ const ReducaoAguaPage = () => {
                 })}
               </div>
 
-              <motion.div 
-                initial={{ opacity: 0, y: 30 }} 
-                animate={{ opacity: 1, y: 0 }} 
+              <motion.div
+                initial={{ opacity: 0, y: 30 }}
+                animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: 0.2, duration: 0.8 }}
                 className="bg-white rounded-2xl shadow-xl p-8 mb-10"
               >
@@ -143,19 +146,22 @@ const ReducaoAguaPage = () => {
           <h2 className="text-3xl font-bold text-gray-800 mb-6 text-center">Galeria: A Realidade da Água</h2>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-start">
             {galleryImages.map((image, index) => (
-              <motion.div 
+              <motion.div
                 key={index}
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: index * 0.2, duration: 0.5 }}
                 className="flex flex-col items-center text-center"
               >
-                <img 
-                  src={image.src} 
-                  alt={image.alt} 
+                <img
+                  src={image.src}
+                  alt={image.alt}
                   className="w-full max-w-md rounded-lg shadow-lg mb-3"
                 />
-                <span className="text-sm text-gray-600 font-medium">{image.caption}</span>
+                <span className="text-sm text-gray-600 font-medium">
+                  {image.caption} <br />
+                  Fonte: <a href={image.link} target="_blank" rel="noopener noreferrer" className="underline hover:text-sky-700 transition-colors">Ver Mais</a>
+                </span>
               </motion.div>
             ))}
           </div>

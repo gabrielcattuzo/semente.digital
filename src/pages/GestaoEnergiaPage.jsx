@@ -1,3 +1,4 @@
+
 import React from 'react';
 import { Helmet } from 'react-helmet';
 import { motion } from 'framer-motion';
@@ -52,16 +53,16 @@ const GestaoEnergiaPage = () => {
                       <div className="text-3xl font-bold text-yellow-600 mb-1">{stat.value}</div>
                       <div className="text-gray-700 font-semibold text-sm mb-1">{stat.label}</div>
                       <div className="text-xs text-gray-500 mt-auto">
-                        Fonte: <a href={stat.url} target="_blank" rel="noopener noreferrer" className="underline hover:text-yellow-700 transition-colors">{stat.source}</a>
+                        Source: <a href={stat.url} target="_blank" rel="noopener noreferrer" className="underline hover:text-yellow-700 transition-colors">{stat.source}</a>
                       </div>
                     </motion.div>
                   );
                 })}
               </div>
 
-              <motion.div 
-                initial={{ opacity: 0, y: 30 }} 
-                animate={{ opacity: 1, y: 0 }} 
+              <motion.div
+                initial={{ opacity: 0, y: 30 }}
+                animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: 0.2, duration: 0.8 }}
                 className="bg-white rounded-2xl shadow-xl p-8 mb-10"
               >
@@ -197,7 +198,7 @@ const GestaoEnergiaPage = () => {
                   className="w-full md:max-w-xl lg:max-w-3xl rounded-lg shadow-md"
                 />
                  <span className="text-xs text-gray-500 mt-4">
-                  Fonte: Operador Nacional do Sistema Elétrico (ONS)
+                  Fonte: <a href="https://www.ecodebate.com.br/2023/06/05/vantagens-e-potencial-da-energia-solar-fotovoltaica-no-brasil/" target="_blank" rel="noopener noreferrer" className="underline hover:text-yellow-700 transition-colors">Ecodebate</a>
                 </span>
               </motion.div>
 

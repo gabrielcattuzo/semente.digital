@@ -1,4 +1,3 @@
-
 import React from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import { Leaf, Mail, Github, Linkedin } from 'lucide-react';
@@ -58,8 +57,11 @@ const Footer = () => {
                 <span className="text-sm">contato@sementedigital.com</span>
               </a>
               <div className="flex gap-4 mt-2">
-                <a href="https://github.com/gabrielcattuzo/semente.digital" className="text-emerald-100 hover:text-white transition-colors">
+                <a href="#" className="text-emerald-100 hover:text-white transition-colors">
                   <Github className="w-5 h-5" />
+                </a>
+                <a href="#" className="text-emerald-100 hover:text-white transition-colors">
+                  <Linkedin className="w-5 h-5" />
                 </a>
               </div>
             </div>
